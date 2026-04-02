@@ -20,6 +20,7 @@ public class ModItemGroups {
                         .icon(() -> new ItemStack(ModBlocks.NINTENDO_SWITCH)).displayItems((_, entries) -> {
                             entries.accept(ModBlocks.NINTENDO_SWITCH);
                             entries.accept(ModItems.JOYCON_LEFT);
+                            entries.accept(ModItems.JOYCON_RIGHT);
                             entries.accept(ModItems.LCD);
                             entries.accept(ModItems.BLACK_GRILL);
                         }).build());

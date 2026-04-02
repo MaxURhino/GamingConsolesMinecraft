@@ -15,6 +15,7 @@ public class ModItems {
     public static final Item LCD = registerItem("lcd", Item::new, new Item.Properties());
     public static final Item BLACK_GRILL = registerItem("black_grill", Item::new, new Item.Properties());
     public static final Item JOYCON_LEFT = registerItem("joycon_left", Item::new, new Item.Properties());
+    public static final Item JOYCON_RIGHT = registerItem("joycon_right", Item::new, new Item.Properties());
 
     private static <T extends Item> T registerItem(String name, Function<Item.Properties, T> itemFactory, Item.Properties properties) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, GamingConsoles.id(name));

@@ -73,11 +73,6 @@
 						"vector": [0, 0, 0]
 					}
 				}
-			},
-			"sound_effects": {
-				"0.0": {
-					"effect": "switchsound.mp3"
-				}
 			}
 		},
 		"animation.nintendo_switch.snap_no_red-no_no": {
