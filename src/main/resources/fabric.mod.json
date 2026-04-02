@@ -27,10 +27,13 @@
 			"net.maksiurino.gamingconsoles.GamingConsoles"
 		],
 		"client": [
-          "net.maksiurino.gamingconsoles.client.GamingConsolesClient"
+            "net.maksiurino.gamingconsoles.client.GamingConsolesClient"
 		],
 		"fabric-datagen": [
 			"net.maksiurino.gamingconsoles.client.datagen.GamingConsolesDataGenerator"
+		],
+		"modmenu": [
+			"net.maksiurino.gamingconsoles.compat.modmenu.GamingConsolesModMenuCompat"
 		]
 	},
 	"mixins": [

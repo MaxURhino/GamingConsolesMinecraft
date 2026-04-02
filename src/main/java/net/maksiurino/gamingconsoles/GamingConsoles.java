@@ -1,10 +1,13 @@
 package net.maksiurino.gamingconsoles;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 
 import net.maksiurino.gamingconsoles.block.ModBlockTypes;
 import net.maksiurino.gamingconsoles.block.ModBlocks;
 import net.maksiurino.gamingconsoles.block.entity.ModBlockEntities;
+import net.maksiurino.gamingconsoles.config.GamingConsolesConfig;
 import net.maksiurino.gamingconsoles.item.ModItemGroups;
 import net.maksiurino.gamingconsoles.item.ModItems;
 import net.minecraft.resources.Identifier;
@@ -17,6 +20,8 @@ public class GamingConsoles implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		AutoConfig.register(GamingConsolesConfig.class, JanksonConfigSerializer::new);
+
 		ModItemGroups.bootstrap();
 		ModItems.bootstrap();
 		ModBlocks.bootstrap();
