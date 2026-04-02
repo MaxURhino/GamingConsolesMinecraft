@@ -2,12 +2,14 @@ package net.maksiurino.gamingconsoles;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.maksiurino.gamingconsoles.block.ModBlockTypes;
 import net.maksiurino.gamingconsoles.block.ModBlocks;
+import net.maksiurino.gamingconsoles.block.entity.ModBlockEntities;
 import net.maksiurino.gamingconsoles.item.ModItemGroups;
 import net.maksiurino.gamingconsoles.item.ModItems;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import software.bernie.geckolib.GeckoLib;
 
 public class GamingConsoles implements ModInitializer {
 	public static final String MOD_ID = "gamingconsoles";
@@ -15,11 +17,14 @@ public class GamingConsoles implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModItemGroups.registerItemGroups();
+		ModItemGroups.bootstrap();
+		ModItems.bootstrap();
+		ModBlocks.bootstrap();
+		ModBlockEntities.bootstrap();
+		ModBlockTypes.bootstrap();
+	}
 
-		GeckoLib.initialize();
-
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+	public static Identifier id(final String name) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, name);
 	}
 }

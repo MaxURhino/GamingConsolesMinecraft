@@ -1,34 +1,34 @@
 package net.maksiurino.gamingconsoles.item;
 
-
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.maksiurino.gamingconsoles.GamingConsoles;
 import net.maksiurino.gamingconsoles.block.ModBlocks;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 public class ModItemGroups {
-    public static final ItemGroup NINTENDO_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(GamingConsoles.MOD_ID, "nintendo_switch"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemGroup.gamingconsoles.nintendo_switch"))
-                    .icon(() -> new ItemStack(ModBlocks.NINTENDO_SWITCH)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.LCD);
-                        entries.add(ModItems.BLACK_GRILL);
-                        entries.add(Items.BLACK_CONCRETE);
-                        entries.add(Items.POLISHED_BLACKSTONE_BUTTON);
-                        entries.add(Items.BLACK_BANNER);
-                        entries.add(ModBlocks.NINTENDO_SWITCH);
+    public static final ResourceKey<CreativeModeTab> NINTENDO_GROUP = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), GamingConsoles.id("nintendo_switch"));
+
+    public static void bootstrap() {
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+                NINTENDO_GROUP,
+                FabricItemGroup.builder().title(Component.translatable("itemGroup.gamingconsoles.nintendo_switch"))
+                        .icon(() -> new ItemStack(ModBlocks.NINTENDO_SWITCH)).displayItems((_, entries) -> {
+                            entries.accept(ModItems.LCD);
+                            entries.accept(ModItems.BLACK_GRILL);
+                            entries.accept(Items.BLACK_CONCRETE);
+                            entries.accept(Items.POLISHED_BLACKSTONE_BUTTON);
+                            entries.accept(Items.BLACK_BANNER);
+                            entries.accept(ModBlocks.NINTENDO_SWITCH);
 
 
 
-                    }).build());
-
-    public static void registerItemGroups() {
-        GamingConsoles.LOGGER.info("Registering Item Groups for " + GamingConsoles.MOD_ID);
+                        }).build());
     }
 }

@@ -1,32 +1,31 @@
 package net.maksiurino.gamingconsoles.item;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.maksiurino.gamingconsoles.GamingConsoles;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 
+import java.util.function.Function;
 
 public class ModItems {
-    public static final Item LCD = registerItem("lcd", new Item(new FabricItemSettings()));
-    public static final Item BLACK_GRILL = registerItem("black_grill", new Item(new FabricItemSettings()));
+    public static final Item LCD = registerItem("lcd", Item::new, new Item.Properties());
+    public static final Item BLACK_GRILL = registerItem("black_grill", Item::new, new Item.Properties());
 
-    private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
-        entries.add(LCD);
-        entries.add(BLACK_GRILL);
+    private static <T extends Item> T registerItem(String name, Function<Item.Properties, T> itemFactory, Item.Properties properties) {
+        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, GamingConsoles.id(name));
+        T item = itemFactory.apply(properties.setId(itemKey));
+        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        return item;
     }
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(GamingConsoles.MOD_ID, name), item);
-    }
-
-    public static void registerModItems() {
-        GamingConsoles.LOGGER.info("Registering Mod Items for " + GamingConsoles.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+    public static void bootstrap() {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register((entries) -> {
+            entries.accept(LCD);
+            entries.accept(BLACK_GRILL);
+        });
     }
 }
