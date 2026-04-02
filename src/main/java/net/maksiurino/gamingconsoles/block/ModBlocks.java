@@ -14,14 +14,14 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final Block NINTENDO_SWITCH = registerBlock(
+    public static final Block NINTENDO_SWITCH = register(
             "nintendo_switch",
             NintendoSwitchBlock::new,
             BlockBehaviour.Properties.of().noOcclusion(),
             true
     );
 
-    public static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
+    public static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, GamingConsoles.id(name));
         Block block = blockFactory.apply(properties.setId(blockKey));
         if (shouldRegisterItem) {

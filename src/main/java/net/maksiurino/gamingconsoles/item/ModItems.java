@@ -1,6 +1,6 @@
 package net.maksiurino.gamingconsoles.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.maksiurino.gamingconsoles.GamingConsoles;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,6 +14,7 @@ import java.util.function.Function;
 public class ModItems {
     public static final Item LCD = registerItem("lcd", Item::new, new Item.Properties());
     public static final Item BLACK_GRILL = registerItem("black_grill", Item::new, new Item.Properties());
+    public static final Item JOYCON_LEFT = registerItem("joycon_left", Item::new, new Item.Properties());
 
     private static <T extends Item> T registerItem(String name, Function<Item.Properties, T> itemFactory, Item.Properties properties) {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, GamingConsoles.id(name));
@@ -23,7 +24,7 @@ public class ModItems {
     }
 
     public static void bootstrap() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register((entries) -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((entries) -> {
             entries.accept(LCD);
             entries.accept(BLACK_GRILL);
         });

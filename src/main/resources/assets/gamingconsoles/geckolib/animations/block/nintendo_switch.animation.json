@@ -4,19 +4,17 @@
 		"animation.nintendo_switch.idle_no_no": {
 			"loop": true,
 			"animation_length": 0.0417,
-			"start_delay": "0",
-			"loop_delay": "0",
+			"start_delay": 0,
+			"loop_delay": 0,
 			"bones": {
 				"joycon_l": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
 				},
 				"joycon_r": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
 				}
 			}
@@ -24,13 +22,12 @@
 		"animation.nintendo_switch.idle_blue_no": {
 			"loop": true,
 			"animation_length": 0.0417,
-			"start_delay": "0",
-			"loop_delay": "0",
+			"start_delay": 0,
+			"loop_delay": 0,
 			"bones": {
 				"joycon_r": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
 				}
 			}
@@ -38,13 +35,12 @@
 		"animation.nintendo_switch.idle_no_red": {
 			"loop": true,
 			"animation_length": 0.0417,
-			"start_delay": "0",
-			"loop_delay": "0",
+			"start_delay": 0,
+			"loop_delay": 0,
 			"bones": {
 				"joycon_l": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
 				}
 			}
@@ -52,8 +48,8 @@
 		"animation.nintendo_switch.idle_blue_red": {
 			"loop": true,
 			"animation_length": 0.0417,
-			"start_delay": "0",
-			"loop_delay": "0"
+			"start_delay": 0,
+			"loop_delay": 0
 		},
 		"animation.nintendo_switch.snap_blue_no-no_no": {
 			"loop": "hold_on_last_frame",
@@ -62,51 +58,48 @@
 				"joycon_l": {
 					"position": {
 						"0.0": {
-							"vector": [0, 11, 0],
-							"easing": "linear"
+							"vector": [0, 11, 0]
 						},
 						"0.0833": {
-							"vector": [0, 9.33, 0],
-							"easing": "linear"
+							"vector": [0, 9.33, 0]
 						},
 						"0.25": {
-							"vector": [0, 0, 0],
-							"easing": "linear"
+							"vector": [0, 0, 0]
 						}
 					}
 				},
 				"joycon_r": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "switchsound.mp3"
 				}
 			}
 		},
 		"animation.nintendo_switch.snap_no_red-no_no": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 0.375,
-			"start_delay": "0",
+			"start_delay": 0,
 			"bones": {
 				"joycon_l": {
 					"scale": {
-						"vector": [0, 0, 0],
-						"easing": "linear"
+						"vector": [0, 0, 0]
 					}
 				},
 				"joycon_r": {
 					"position": {
 						"0.0": {
-							"vector": [0, 11, 0],
-							"easing": "linear"
+							"vector": [0, 11, 0]
 						},
 						"0.0833": {
-							"vector": [0, 9, 0],
-							"easing": "linear"
+							"vector": [0, 9, 0]
 						},
 						"0.25": {
-							"vector": [0, 0, 0],
-							"easing": "linear"
+							"vector": [0, 0, 0]
 						}
 					}
 				}
@@ -115,21 +108,18 @@
 		"animation.nintendo_switch.snap_blue_no-no_red": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 0.375,
-			"start_delay": "0",
+			"start_delay": 0,
 			"bones": {
 				"joycon_l": {
 					"position": {
 						"0.0": {
-							"vector": [0, 11, 0],
-							"easing": "linear"
+							"vector": [0, 11, 0]
 						},
 						"0.0833": {
-							"vector": [0, 9.33, 0],
-							"easing": "linear"
+							"vector": [0, 9.33, 0]
 						},
 						"0.25": {
-							"vector": [0, 0, 0],
-							"easing": "linear"
+							"vector": [0, 0, 0]
 						}
 					}
 				}
@@ -138,21 +128,18 @@
 		"animation.nintendo_switch.snap_no_red-blue_no": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 0.375,
-			"start_delay": "0",
+			"start_delay": 0,
 			"bones": {
 				"joycon_r": {
 					"position": {
 						"0.0": {
-							"vector": [0, 11, 0],
-							"easing": "linear"
+							"vector": [0, 11, 0]
 						},
 						"0.0833": {
-							"vector": [0, 9.33, 0],
-							"easing": "linear"
+							"vector": [0, 9.33, 0]
 						},
 						"0.25": {
-							"vector": [0, 0, 0],
-							"easing": "linear"
+							"vector": [0, 0, 0]
 						}
 					}
 				}
